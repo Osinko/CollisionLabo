@@ -25,9 +25,9 @@ public class Line2PlaneCheck1 : Editor
 				line.normalCheck = 0 != Vector3.Dot (np, vp);		//無限平面に対する線分の衝突判定
 				line.planeInLineCheck = 0 == Vector3.Dot (np, pp);	//無限平面上に線分が存在する時の衝突判定
 
-				line.lineV = Vector3.Dot (np, line.v - np);
-				line.lineP1 = Vector3.Dot (np, line.p1 - np);
-				line.penetrationLineCheck = 0 >= (line.lineV * line.lineP1);
+				line.lineV = Vector3.Dot (line.n, line.v - np);
+				line.lineP1 = Vector3.Dot (line.n, line.p1 - np);
+				line.penetrationLineCheck = 0 >= (line.lineV * line.lineP1);	//線分が平面を貫通しているかチェック
 
 				line.hitCheck = line.normalCheck | line.planeInLineCheck && line.penetrationLineCheck;
 		}
