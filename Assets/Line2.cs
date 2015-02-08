@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Line2 : MonoBehaviour {
+public class Line2 : MonoBehaviour
+{
+		public Vector3[] poly;
+		public Vector3 v1, v2;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+		public bool planeChk, penetChk, normChk, insideChk;
 }
